@@ -9,11 +9,11 @@
 def add(a: float, b: float) -> float:
     """
     Calculate the sum of two float numbers.
-    
+
     Args:
         a (float): The first input float.
         b (float): The second input float.
-        
+
     Returns:
         float: The sum of a and b as a float.
     """
