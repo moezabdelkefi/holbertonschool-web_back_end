@@ -3,10 +3,8 @@ from typing import Callable
 
 """
 a type-annotated function make_multiplier that takes
-a float multiplier as argument and returns a function that multiplies
-a float by multiplier.
+a float multiplier as argument
 """
-
 
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
@@ -17,7 +15,8 @@ def make_multiplier(multiplier: float) -> Callable[[float], float]:
         multiplier (float): The float value by which to multiply.
 
     Returns:
-        Callable[[float], float]: A multiplier function that takes a float and returns the product.
+        Callable[[float], float]: A multiplier function
+        that takes a float and returns the product.
     """
     def multiplier_function(x: float) -> float:
         return x * multiplier
