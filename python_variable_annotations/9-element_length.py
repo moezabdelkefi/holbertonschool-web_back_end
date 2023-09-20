@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
+from typing import Iterable, Tuple
+
 """
 Let's duck type an iterable object
 """
-from typing import Iterable, Tuple
+
 
 def element_length(lst: Iterable[Iterable]) -> Iterable[Tuple[Iterable, int]]:
     """
