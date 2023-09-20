@@ -2,8 +2,8 @@
 from typing import List, Union
 
 """
-This module defines a type-annotated function sum_mixed_list, which takes a list mxd_lst of integers and floats 
-and returns their sum as a float.
+a type-annotated function sum_mixed_list which takes
+a list mxd_lst of integers and floats and returns their sum as a float
 """
 
 
