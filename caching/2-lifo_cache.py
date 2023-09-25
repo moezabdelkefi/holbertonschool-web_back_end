@@ -12,11 +12,13 @@ class LIFOCache(BaseCaching):
     def put(self, key, item):
         if key is not None and item is not None:
             if len(self.cache_data) >= self.MAX_ITEMS:
-                """Find the last item (the one added most recently)
-                    Add the new item to the cache
+                """
+                Find the last item (the one added most recently)
+                Add the new item to the cache
+                Remove the last item from the cache
                 """
                 last_item_key = list(self.cache_data.keys())[-1]
-                """Remove the last item from the cache"""
+
                 del self.cache_data[last_item_key]
                 print(f"DISCARD: {last_item_key}")
             self.cache_data[key] = item
