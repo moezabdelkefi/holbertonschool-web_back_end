@@ -4,10 +4,12 @@ from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
+    """BasicCache that inherits from BaseCaching"""
     def __init__(self):
         super().__init__()
 
     def put(self, key, item):
+        """assign to the dictionary self.cache_data"""
         if key is None or item is None:
             return
 
@@ -19,6 +21,7 @@ class FIFOCache(BaseCaching):
         self.cache_data[key] = item
 
     def get(self, key):
+        """return the value in self.cache_data.get linked to key."""
         if key is None:
             return None
 
