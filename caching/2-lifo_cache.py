@@ -11,7 +11,7 @@ class LIFOCache(BaseCaching):
 
     def put(self, key, item):
         """
-         Find the last item (the one added most recently) 
+         Find the last item (the one added most recently)
          Add the new item to the cache
          Remove the last item from the cache
         """
