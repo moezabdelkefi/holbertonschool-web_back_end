@@ -12,7 +12,6 @@ class FIFOCache(BaseCaching):
             return
 
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            # Find the first item that was put in the cache (FIFO)
             first_key = next(iter(self.cache_data))
             print(f"DISCARD: {first_key}")
             del self.cache_data[first_key]
