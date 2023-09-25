@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" LIFO Caching"""
+"""LIFO Caching"""
 from base_caching import BaseCaching
 
 
@@ -10,13 +10,13 @@ class LIFOCache(BaseCaching):
         super().__init__()
 
     def put(self, key, item):
+        """
+         Find the last item (the one added most recently) 
+         Add the new item to the cache
+         Remove the last item from the cache
+        """
         if key is not None and item is not None:
             if len(self.cache_data) >= self.MAX_ITEMS:
-                """
-                Find the last item (the one added most recently)
-                Add the new item to the cache
-                Remove the last item from the cache
-                """
                 last_item_key = list(self.cache_data.keys())[-1]
 
                 del self.cache_data[last_item_key]
