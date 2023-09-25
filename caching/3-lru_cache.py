@@ -11,7 +11,7 @@ class LRUCache(BaseCaching):
         self.order = []
 
     def put(self, key, item):
-        """ 
+        """
         Check if the cache is full
         Add the new key to the end of the order list
         """
