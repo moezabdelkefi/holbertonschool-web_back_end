@@ -13,7 +13,8 @@ def index_range(page, page_size):
     page_size (int): The number of items per page.
 
     Returns:
-    tuple: A tuple containing the start index (inclusive) and end index (exclusive).
+    tuple: A tuple containing the start index (inclusive) and end
+    index (exclusive).
     """
     if page < 1 or page_size <= 0:
         return None
