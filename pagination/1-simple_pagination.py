@@ -2,6 +2,7 @@ import csv
 from typing import List
 from math import ceil
 
+
 class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -28,7 +29,8 @@ class Server:
         total_items (int): The total number of items in the dataset.
 
         Returns:
-        tuple: A tuple containing the start index (inclusive) and end index (exclusive).
+        tuple: A tuple containing the start index (inclusive)
+        and end index (exclusive).
         Returns (None, None) if page or page_size is invalid.
         """
         if page < 1 or page_size <= 0 or total_items <= 0:
@@ -51,4 +53,3 @@ class Server:
             return []
 
         return self.dataset()[start_index:end_index]
-    
