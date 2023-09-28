@@ -25,6 +25,9 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """Retrieve a page of data from the indexed dataset with hypermedia 
+        information.
+        """
         assert isinstance(
             index, int) and index >= 0
         assert isinstance(
