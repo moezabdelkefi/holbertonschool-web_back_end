@@ -6,7 +6,7 @@ an async comprehension over async_generator, then return the
 """
 
 from typing import List
-import random  # Import the random module
+import random
 
 
 async def async_generator() -> List[float]:
