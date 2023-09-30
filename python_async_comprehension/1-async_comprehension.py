@@ -5,10 +5,14 @@ an async comprehension over async_generator, then return the
 10 random numbers.
 """
 
-import asyncio
 from typing import List
+import random  # Import the random module
 
-async_generator = __import__('0-async_generator').async_generator
+
+async def async_generator() -> List[float]:
+    """Async Generator that yields random floats"""
+    for _ in range(10):
+        yield random.uniform(0, 1)
 
 
 async def async_comprehension() -> List[float]:
