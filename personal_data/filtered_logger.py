@@ -6,7 +6,7 @@ import re
 from typing import List
 
 
-def filter_datum(fields: List[str], redaction: str, message: str, separator: str) -> bool:
+def filter_datum(fields: List[str], redaction: str, message: str, separator: str) -> str:
     pattern = '|'.join(map(re.escape, fields))
     filtered_message = re.sub(pattern, redaction, message)
 
