@@ -5,6 +5,7 @@ returns the log message obfuscated
 import re
 from typing import List
 import logging
+PII_FIELDS = ("name", "email", "phone", "ssn", "credit_card")
 
 
 def filter_datum(fields: List[str], redaction: str, message: str,
@@ -35,7 +36,18 @@ class RedactingFormatter(logging.Formatter):
         self.fields = fields
 
     def format(self, record: logging.LogRecord) -> str:
-        """formatting of log messages before they are emitted"""
+        """ Formatting of log messages before they are emitted """
         message = super().format(record)
         return filter_datum(self.fields, self.REDACTION,
                             message, self.SEPARATOR)
+
+
+def get_logger() -> logging.Logger:
+    """Create logger"""
+    logger = logging.getLogger("user_data")
+    logger.setLevel(logging.INFO)
+    logger.propagate = False
+    handler = logging.StreamHandler()
+    handler.setFormatter(RedactingFormatter(PII_FIELDS))
+    logger.addHandler(handler)
+    return logger
