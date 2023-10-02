@@ -8,4 +8,9 @@ from typing import List
 
 def filter_datum(fields: List[str], redaction: str, message: str, separator: str) -> str:
     pattern = '|'.join(map(re.escape, fields))
-    return re.sub(pattern, redaction, message)
+    filtered_message = re.sub(pattern, redaction, message)
+
+    if filtered_message != message:
+        return True
+    else:
+        return False
