@@ -5,7 +5,7 @@ returns the log message obfuscated
 import re
 from typing import List
 import logging
-PII_FIELDS = ("name", "email", "phone", "ssn", "credit_card", "password")
+PII_FIELDS = ("name", "email", "phone", "credit_card", "password")
 
 
 def filter_datum(fields: List[str], redaction: str, message: str,
