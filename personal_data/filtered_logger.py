@@ -11,6 +11,6 @@ def filter_datum(fields: List[str], redaction: str, message: str, separator: str
     filtered_message = re.sub(pattern, redaction, message)
 
     if filtered_message != message:
-        return re.sub(pattern, redaction, message)
+        return filtered_message
     else:
         return False
