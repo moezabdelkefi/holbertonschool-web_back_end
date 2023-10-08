@@ -33,6 +33,7 @@ def require_authentication():
 
 @app.before_request
 def before_request():
+    """return the current request"""
     require_authentication()
 
 @app.errorhandler(404)
