@@ -3,6 +3,7 @@
 from api.v1.auth.auth import Auth
 import uuid
 
+
 class SessionAuth(Auth):
     """class sessionauth"""
     user_id_by_session_id = {}
@@ -24,4 +25,3 @@ class SessionAuth(Auth):
         self.user_id_by_session_id[session_id] = user_id
 
         return session_id
-
