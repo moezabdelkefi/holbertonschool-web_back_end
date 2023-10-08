@@ -5,6 +5,7 @@ Route module for the API
 from flask import request
 from typing import List, TypeVar
 
+
 class Auth:
     """class Auth"""
 
@@ -15,7 +16,8 @@ class Auth:
 
         Args:
             path (str): The path of the request.
-            excluded_paths (List[str]): A list of paths that do not require authentication.
+            excluded_paths (List[str]): A list of paths that
+            do not require authentication.
 
         Returns:
             bool: True if authentication is required, False otherwise.
@@ -30,7 +32,8 @@ class Auth:
             if not excluded_path.endswith('/'):
                 excluded_path += '/'
 
-            if path.startswith(excluded_path) or excluded_path.startswith(path):
+            if path.startswith(excluded_path) or \
+                    excluded_path.startswith(path):
                 return False
 
         return True
