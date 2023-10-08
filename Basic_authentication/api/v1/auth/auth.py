@@ -21,7 +21,7 @@ class Auth:
         Returns:
             bool: True if authentication is required, False otherwise.
         """
-        return True
+        return False
 
     def authorization_header(self, request=None) -> str:
         """
@@ -33,7 +33,7 @@ class Auth:
         Returns:
             str: The authorization header value.
         """
-        return None  # Modify the docstring as needed
+        return None
 
     def current_user(self, request=None) -> TypeVar('User'):
         """
