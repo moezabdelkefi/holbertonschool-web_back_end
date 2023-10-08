@@ -26,6 +26,6 @@ def stats() -> str:
     return jsonify(stats)
 
 @app_views.route("/unauthorized", methods=["GET"])
-def unauthorized_endpoint() -> str:
+def unauthorized_endpoint():
     """Error handler: Unauthorized"""
     abort(401)
