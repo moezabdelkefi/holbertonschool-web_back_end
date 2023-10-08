@@ -32,4 +32,5 @@ def unauthorized_endpoint():
 
 @app_views.route('/api/v1/forbidden', methods=['GET'], strict_slashes=False)
 def forbidden_endpoint():
+    """return endpoint 403"""
     abort(403)
