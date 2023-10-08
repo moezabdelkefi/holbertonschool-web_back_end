@@ -5,9 +5,9 @@ Route module for the API
 from flask import request
 from typing import List, TypeVar
 
-
 class Auth:
     """class Auth"""
+
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """
         Determines if a request requires authentication based on the path
@@ -34,3 +34,30 @@ class Auth:
                 return False
 
         return True
+
+    def authorization_header(self, request=None) -> str:
+        """
+        Extracts the authorization header from the Flask request.
+
+        Args:
+            request (flask.Request): The Flask request object.
+
+        Returns:
+            str: The authorization header value or None if not found.
+        """
+        if request is None:
+            return None
+
+        return request.headers.get('Authorization')
+
+    def current_user(self, request=None) -> TypeVar('User'):
+        """
+        Retrieves the current user based on the Flask request.
+
+        Args:
+            request (flask.Request): The Flask request object.
+
+        Returns:
+            TypeVar('User'): The current user.
+        """
+        return None
