@@ -38,6 +38,7 @@ def forbidden(error):
 
 @app.errorhandler(403)
 def forbidden(error):
+    """ Error handler: Forbidden"""
     response = jsonify({"error": "Forbidden"})
     response.status_code = 403
     return response
