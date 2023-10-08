@@ -21,6 +21,7 @@ if auth_type:
         auth = Auth()
 
 def require_authentication():
+    """requires authentication"""
     if auth is None:
         return
     excluded_paths = ['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/']
