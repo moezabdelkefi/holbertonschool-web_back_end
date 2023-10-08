@@ -2,6 +2,8 @@
 """create a emty class SessionAuth"""
 from api.v1.auth.auth import Auth
 import uuid
+from models.user import User
+
 
 
 class SessionAuth(Auth):
@@ -39,3 +41,23 @@ class SessionAuth(Auth):
             return None
 
         return self.user_id_by_session_id.get(session_id)
+
+    def current_user(self, request=None) -> User:
+            """Get a User instance based on a session cookie.
+
+            Args:
+                request: The Flask request object.
+
+            Returns:
+                User: The User instance or None if not found.
+            """
+            session_cookie_value = self.session_cookie(request)
+            if session_cookie_value is None:
+                return None
+
+            user_id = self.user_id_for_session_id(session_cookie_value)
+            if user_id is None:
+                return None
+
+            user = User.get(user_id)
+            return user
