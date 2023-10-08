@@ -14,13 +14,13 @@ class Auth:
 
         Args:
             path (str): The path of the request.
-            excluded_paths (List[str]): A list of paths
-            that do not require authentication.
+            excluded_paths (List[str]): A list of paths that
+            do not require authentication.
 
         Returns:
             bool: True if authentication is required, False otherwise.
         """
-        return False
+        return True
 
     def authorization_header(self, request=None) -> str:
         """
@@ -32,8 +32,7 @@ class Auth:
         Returns:
             str: The authorization header value.
         """
-        # Implement your logic here (not needed for now)
-        return None
+        return None  # Modify the docstring as needed
 
     def current_user(self, request=None) -> TypeVar('User'):
         """
