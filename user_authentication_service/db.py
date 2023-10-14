@@ -41,12 +41,11 @@ class DB:
         self._session.commit()
         return user
 
-    def find_user_by(self, **kwargs):
-        """Returns a user with the given username and password"""
-        try:
-            user = self._session.query(User).filter_by(**kwargs).first()
-            if user is None:
-                raise NoResultFound("No user found")
-            return user
-        except InvalidRequestError as e:
-            raise e
+    def find_user_by(self, **kwargs) -> User:
+        """User finder method"""
+        if kwargs is None:
+            raise InvalidRequestError
+        user = self._session.query(User).filter_by(**kwargs).first()
+        if user is None:
+            raise NoResultFound
+        return user
