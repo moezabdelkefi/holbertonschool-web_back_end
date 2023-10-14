@@ -32,7 +32,7 @@ class Auth:
             new_user = self._db.add_user(email, hashed_password)
             return new_user
 
-    def valid_login(self, email, password):
+    def valid_login(self, email: str, password: str) -> bool:
         """Returns True if the given email
         and password are valid for
         the given user account and password combination
