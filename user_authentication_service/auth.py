@@ -15,6 +15,12 @@ def _hash_password(password: str) -> bytes:
     return hashed_password
 
 
+def _generate_uuid() -> str:
+    """ Generates a unique identifier 
+    for the given password string"""
+    return str(uuid.uuid4())
+
+
 class Auth:
     """Auth class to interact with the a
     uthentication database.
@@ -45,6 +51,3 @@ class Auth:
                                   user.hashed_password)
         except NoResultFound:
             return False
-
-    def _generate_uuid() -> str:
-        return str(uuid.uuid4())
