@@ -42,6 +42,7 @@ class DB:
         return user
 
     def find_user_by(self, **kwargs):
+        """ Returns a user matching the given username and password"""
         try:
             user = self._session.query(User).filter_by(**kwargs).first()
             if user is None:
