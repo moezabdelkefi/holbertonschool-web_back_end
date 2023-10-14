@@ -34,22 +34,18 @@ class DB:
 
     def add_user(self, email: str, hashed_password: str) -> User:
         """ Add a user to the database"""
-        new_user = User(email=email, hashed_password=hashed_password)
-
-        session = self._session
-        session.add(new_user)
-
-        session.commit()
-
-        return new_user
+        user = User()
+        user.email = email
+        user.hashed_password = hashed_password
+        self._session.add(user)
+        self._session.commit()
+        return user
 
     def find_user_by(self, **kwargs):
-        """ Returns the user with the given username
-        and password and returns it. """
         try:
             user = self._session.query(User).filter_by(**kwargs).first()
             if user is None:
-                raise NoResultFound("No user found for the given criteria")
+                raise NoResultFound
             return user
         except InvalidRequestError as e:
             raise e
