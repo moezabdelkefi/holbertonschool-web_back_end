@@ -7,6 +7,7 @@ from client import GithubOrgClient
 
 
 class TestGithubOrgClient(unittest.TestCase):
+    """Test Github Organization"""
     @parameterized.expand([
         ('google', 'Google'),
         ('abc', 'ABC')
