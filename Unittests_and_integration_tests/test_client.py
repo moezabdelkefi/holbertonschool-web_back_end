@@ -14,6 +14,7 @@ class TestGithubOrgClient(unittest.TestCase):
     ])
     @patch('client.GithubOrgClient.get_json', return_value={"name": "Google"})
     def test_org(self, org_name, expected_name, mock_get_json):
+        """Test organization retrieval with json"""
         client = GithubOrgClient(org_name)
         org_info = client.org()
 
