@@ -5,6 +5,7 @@ from utils import access_nested_map
 
 
 class TestAccessNestedMap(unittest.TestCase):
+
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
@@ -17,10 +18,11 @@ class TestAccessNestedMap(unittest.TestCase):
         ({}, ("a",), "KeyError: 'a' not found in the nested_map"),
         ({"a": 1}, ("a", "b"), "KeyError: 'b' not found in the nested_map")
     ])
-    def test_access_nested_map_exception(self, nested_map, path, expected_error_message):
-        with self.assertRaises(KeyError) as context:
+    def test_access_nested_map_exception(self, nested_map, path, result):
+        """test exception"""
+        with self.assertRaises(KeyError) as e:
             access_nested_map(nested_map, path)
-        self.assertEqual(str(context.exception), expected_error_message)
+            self.assertEqual(result, e.exception)
 
 
 if __name__ == "__main__":
