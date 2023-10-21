@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""test-client-server"""
 import unittest
 from parameterized import parameterized
 from unittest.mock import patch, PropertyMock
