@@ -5,7 +5,7 @@ from flask_babel import Babel
 
 babel = Babel()
 
-app = Flask(__name)
+app = Flask(__name__)
 app.config.from_object('config.Config')
 
 
