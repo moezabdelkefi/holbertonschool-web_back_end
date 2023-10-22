@@ -1,0 +1,1 @@
+The term internationalization is often represented as i18n, where 18 is the number of letters between the word's opening "i" and closing "n." Internationalization provides a foundation for more effectively localizing a product for multiple target audiences.
