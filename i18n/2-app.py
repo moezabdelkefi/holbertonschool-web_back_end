@@ -1,11 +1,10 @@
+#!/usr/bin/env python3
+"""Get locale from request"""
 from flask import Flask, render_template, request
 from flask_babel import Babel
 
-# Instantiate the Babel object
 babel = Babel()
 
-#!/usr/bin/env python3
-"""Get locale from request"""
 app = Flask(__name)
 app.config.from_object('config.Config')
 
