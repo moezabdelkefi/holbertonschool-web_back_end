@@ -53,5 +53,36 @@ class TestGithubOrgClient(unittest.TestCase):
         self.assertEqual(result, expected_result)
 
 
+class TestIntegrationGithubOrgClient(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.get_patcher = patch('requests.get')
+
+        cls.mock_get = cls.get_patcher.start()
+
+        def side_effect(url):
+            if url == "https://api.github.com/orgs/exampleorg":
+                return cls.org_payload
+            elif url == "https://api.github.com/orgs/exampleorg/repos":
+                return cls.repos_payload
+            elif url == "https://api.github.com/orgs/exampleorg/repos?license=apache-2.0":
+                return cls.apache2_repos
+            else:
+                return None
+
+        cls.mock_get.return_value.json.side_effect = side_effect
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.get_patcher.stop()
+
+    def test_public_repos(self):
+        client = GithubOrgClient("exampleorg")
+
+        repos = client.public_repos()
+
+        self.assertEqual(repos, self.expected_repos)
+
+
 if __name__ == '__main__':
     unittest.main()
