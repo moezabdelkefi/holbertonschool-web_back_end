@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+"""Basic Babel setup"""
 from flask import Flask, render_template
 from flask_babel import Babel
 
@@ -18,6 +20,7 @@ app.config.from_object(Config)
 
 @app.route('/')
 def index():
+    """ Return a list of models"""
     return render_template('1-index.html')
 
 
