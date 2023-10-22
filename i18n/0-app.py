@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'], strict_slashes=False)
 def index():
+    """Returns a list of all available templates"""
     return render_template('index.html')
 
 
