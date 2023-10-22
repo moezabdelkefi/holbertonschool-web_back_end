@@ -3,9 +3,10 @@
 from flask import Flask, render_template
 from flask_babel import Babel
 
-app = Flask(__name)
+babel = Babel()
 
-babel = Babel(app)
+app = Flask(__name)
+app.config.from_object('config.Config')
 
 
 class Config:
@@ -15,12 +16,8 @@ class Config:
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
-app.config.from_object(Config)
-
-
 @app.route('/')
 def index():
-    """ Return a list of models"""
     return render_template('1-index.html')
 
 
