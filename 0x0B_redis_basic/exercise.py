@@ -34,6 +34,7 @@ def call_history(method: Callable) -> Callable:
 
 
 class Cache:
+    """Cache implementation for a single cache object"""
     def __init__(self):
         """Construct a new Cache instance with the given arguments"""
         self._redis = redis.Redis()
