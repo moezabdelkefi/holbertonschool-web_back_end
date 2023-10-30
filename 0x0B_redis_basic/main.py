@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
+""" Main file """
 from exercise import Cache, replay
 
+cache = Cache()
 
-if __name__ == "__main__":
-    cache = Cache()
-    cache.store("foo")
-    cache.store("bar")
-    cache.store(42)
-    replay(cache)
+cache.store("foo")
+cache.store("bar")
+cache.store("egg")
+cache.store("eggsperiment")
+
+replay(cache)
