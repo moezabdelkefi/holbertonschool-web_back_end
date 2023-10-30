@@ -58,3 +58,22 @@ class Cache:
 
     def get_int(self, key: str) -> int:
         return self.get(key, fn=int)
+
+
+def replay(c: Cache):
+    r = c._redis
+    key = c.store.__qualname__
+    inputs_key = f"{key}:inputs"
+    outputs_key = f"{key}:outputs"
+
+    inputs = r.lrange(inputs_key, 0, -1)
+    outputs = r.lrange(outputs_key, 0, -1)
+
+    call_count = len(inputs)
+
+    print(f"{key} was called {call_count} times:")
+
+    for input_data, output_data in zip(inputs, outputs):
+        input_args = eval(input_data.decode("utf-8"))
+        output_key = output_data.decode("utf-8")
+        print(f"{key}{input_args} -> {output_key}")
