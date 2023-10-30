@@ -18,12 +18,14 @@ def count_calls(method: Callable) -> Callable:
 
 
 def call_history(method: Callable) -> Callable:
+    """Returns the callable that will be called"""
     key = method.__qualname__
     inputs = key + ":inputs"
     outputs = key + ":outputs"
 
     @wraps(method)
     def wrapper(self, *args, **kwds):
+        """Returns the method wrapped by this method call"""
         self._redis.rpush(inputs, str(args))
         data = method(self, *args, **kwds)
         self._redis.rpush(outputs, str(data))
@@ -33,12 +35,15 @@ def call_history(method: Callable) -> Callable:
 
 class Cache:
     def __init__(self):
+        """Construct a new Cache instance with the given arguments"""
         self._redis = redis.Redis()
         self._redis.flushdb()
 
     @count_calls
     @call_history
     def store(self, data: Union[str, bytes, int, float]) -> str:
+        """Store the given data in the given database
+        and return it as a string"""
         key = str(uuid.uuid4())
         if isinstance(data, (str, bytes)):
             self._redis.set(key, data)
@@ -48,6 +53,7 @@ class Cache:
 
     def get(self, key: str, fn: Callable = None)\
             -> Union[str, bytes, int, float]:
+        """ Get the value of the given key from the given function"""
         data = self._redis.get(key)
         if data is not None:
             if fn is not None:
@@ -56,9 +62,12 @@ class Cache:
         return None
 
     def get_str(self, key: str) -> str:
+        """ Returns the string representation
+        of the given key in the given format"""
         return self.get(key, fn=lambda x: x.decode("utf-8"))
 
     def get_int(self, key: str) -> int:
+        """ Returns the value of the given key in the given"""
         return self.get(key, fn=int)
 
 
