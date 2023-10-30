@@ -7,6 +7,7 @@ from functools import wraps
 
 
 def count_calls(method: Callable) -> Callable:
+    """ Count calls to a method in the database"""
     @wraps(method)
     def wrapper(self, *args, **kwargs):
         key = method.__name__
