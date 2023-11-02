@@ -11,6 +11,8 @@ This repository houses a collection of projects related to web back-end developm
 ## Implemented Features:
 
 ### 0x0B_redis_basic:
+![Screenshot 2023-11-02 121504](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/00272764-0813-48a8-8dd2-ab421d75fbcd)
+
 
 Enhanced error handling and user feedback for authentication.
 Improved session management, including session expiration and security enhancements.
