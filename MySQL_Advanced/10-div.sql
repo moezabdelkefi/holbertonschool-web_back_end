@@ -1,3 +1,4 @@
+-- Change the delimiter for creating the function
 DELIMITER //
 
 CREATE FUNCTION SafeDiv(a INT, b INT)
