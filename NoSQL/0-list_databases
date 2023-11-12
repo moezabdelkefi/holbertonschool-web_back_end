@@ -1,2 +1,2 @@
-// 1-use_or_create_database
-show my_db
+//  List all databases
+show dbs
