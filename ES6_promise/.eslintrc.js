@@ -21,6 +21,8 @@ module.exports = {
     rules: {
         'no-console': 'off',
         'no-shadow': 'off',
+        "indent": ["error", 2],
+        "semi": ["error", "always"],
         'no-restricted-syntax': [
             'error',
             'LabeledStatement',
