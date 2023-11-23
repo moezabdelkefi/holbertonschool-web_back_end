@@ -1,19 +1,5 @@
-function updateUniqueItems(groceriesMap) {
-  if (!(groceriesMap instanceof Map)) {
-    throw new Error('Cannot process');
-  }
-
-  const updatedMap = new Map();
-
-  groceriesMap.forEach((quantity, item) => {
-    if (quantity === 1) {
-      updatedMap.set(item, 100);
-    } else {
-      updatedMap.set(item, quantity);
-    }
-  });
-
-  return updatedMap;
+export default function updateUniqueItems(map) {
+  if (!(map instanceof Map)) throw Error('Cannot process');
+  for (const i of map) if (i[1] === 1) map.set(i[0], 100);
+  return map;
 }
-
-export default updateUniqueItems;
