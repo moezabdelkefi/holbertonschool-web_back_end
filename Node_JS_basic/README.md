@@ -32,15 +32,29 @@ Begin writing your JavaScript code using Node.js. You can create server applicat
 </p>
 
 ## Accessing Command Line Arguments and Environment Variables with process:
-![code2](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/073bc543-101c-4645-8540-17689c0d568d)
+<p align="center">
+  <img src="https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/073bc543-101c-4645-8540-17689c0d568d" alt="code2" width="500px" />
+</p>
 
 ## Creating a Basic HTTP Server using Node.js:
-![code3](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/e5937f64-66fa-482c-97d6-457685cda4e9)
+<p align="center">
+  <img src="https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/e5937f64-66fa-482c-97d6-457685cda4e9" alt="code3" width="500px" />
+</p>
 
 ## Creating an HTTP Server using Express.js:
-![code4](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/109f6696-9a9e-4e71-8b6f-4f5d298e95cb)
+<p align="center">
+  <img src="https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/109f6696-9a9e-4e71-8b6f-4f5d298e95cb" alt="code4" width="500px" />
+</p>
 
 ## Advanced Routes with Express.js:
-![code5](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/965447d4-6f31-46f2-935a-4557c48eefd2)
+<p align="center">
+  <img src="https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/965447d4-6f31-46f2-935a-4557c48eefd2" alt="code5" width="500px" />
+</p>
 
 ### Using Nodemon for Development:
+Nodemon is a tool that helps in automatic restarting of Node.js applications during development. Install Nodemon globally:
+                                                    npm install -g nodemon
+
+Then run your Node.js application using Nodemon:
+                                                    nodemon app.js
+
