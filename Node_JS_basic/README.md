@@ -27,13 +27,18 @@ Begin writing your JavaScript code using Node.js. You can create server applicat
 
 
 ## Reading Files with Node.js fs Module:
+![code1](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/ca3a606d-4e5f-46e3-9383-02a1b3908da9)
 
 ## Accessing Command Line Arguments and Environment Variables with process:
+![code2](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/073bc543-101c-4645-8540-17689c0d568d)
 
 ## Creating a Basic HTTP Server using Node.js:
+![code3](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/e5937f64-66fa-482c-97d6-457685cda4e9)
 
 ## Creating an HTTP Server using Express.js:
+![code4](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/109f6696-9a9e-4e71-8b6f-4f5d298e95cb)
 
 ## Advanced Routes with Express.js:
+![code5](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/965447d4-6f31-46f2-935a-4557c48eefd2)
 
 ### Using Nodemon for Development:
