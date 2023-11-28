@@ -17,7 +17,7 @@ function countStudents(path) {
         if (!acc[fieldName]) {
           acc[fieldName] = { count: 0, students: [] };
         }
-        acc[fieldName].count++;
+        acc[fieldName].count += 1;
         acc[fieldName].students.push(firstName);
       }
       return acc;
