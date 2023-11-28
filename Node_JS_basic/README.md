@@ -27,7 +27,9 @@ Begin writing your JavaScript code using Node.js. You can create server applicat
 
 
 ## Reading Files with Node.js fs Module:
-![code1](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/ca3a606d-4e5f-46e3-9383-02a1b3908da9)
+<p align="center">
+  <img src="https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/ca3a606d-4e5f-46e3-9383-02a1b3908da9" alt="code1" width="300px" />
+</p>
 
 ## Accessing Command Line Arguments and Environment Variables with process:
 ![code2](https://github.com/moezabdelkefi/holbertonschool-web_back_end/assets/113900578/073bc543-101c-4645-8540-17689c0d568d)
