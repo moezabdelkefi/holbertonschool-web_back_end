@@ -15,6 +15,7 @@ function countStudents(filePath) {
           const studentsData = {};
 
           students.forEach((student) => {
+            // eslint-disable-next-line no-unused-vars
             const [firstName, lastName, age, field] = student.split(',');
             if (!studentsData[field]) {
               studentsData[field] = [];
