@@ -10,5 +10,7 @@ const app = function (req, res) {
 
 const server = http.createServer(app);
 server.listen(port, host, () => {
-  console.log(`listening on ${port}`);
+  console.log('...');
 });
+
+module.exports = server;
