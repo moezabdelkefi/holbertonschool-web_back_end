@@ -11,4 +11,4 @@ app.listen(port, () => {
   console.log('...');
 });
 
-module.exports = express;
+module.exports = app;
