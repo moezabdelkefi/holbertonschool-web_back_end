@@ -11,11 +11,11 @@ function countStudents(filePath) {
         if (lines.length <= 1) {
           reject(new Error('Cannot load the database'));
         } else {
-          const students = lines.slice(1); // Exclude header
+          const students = lines.slice(1);
           const studentsData = {};
 
           students.forEach((student) => {
-            const [firstName, field] = student.split(',');
+            const [firstName, lastName, age, field] = student.split(',');
             if (!studentsData[field]) {
               studentsData[field] = [];
             }
