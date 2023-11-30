@@ -10,7 +10,7 @@ const parseCSV = (data) => {
 
   const studentsData = {};
   students.forEach((student) => {
-    const [firstName, lastName, field] = student.split(',');
+    const [firstName, lastName, , field] = student.split(',');
     if (!studentsData[field]) {
       studentsData[field] = [];
     }
@@ -36,15 +36,18 @@ app.get('/students', (req, res) => {
 
     const studentsData = parseCSV(data);
 
-    const totalStudents = Object.values(studentsData).flat().length;
-    let response = `This is the list of our students\nNumber of students: ${totalStudents}\n`;
+    let response = 'This is the list of our students\n';
+    let totalStudents = 0;
 
     for (const field in studentsData) {
       if (Object.prototype.hasOwnProperty.call(studentsData, field)) {
         const studentsInField = studentsData[field].length;
         response += `Number of students in ${field}: ${studentsInField}. List: ${studentsData[field].join(', ')}\n`;
+        totalStudents += studentsInField;
       }
     }
+
+    response += `Number of students: ${totalStudents}\n`;
 
     res.type('text').send(response);
   } catch (error) {
@@ -53,7 +56,7 @@ app.get('/students', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running and listening on port ${port}`);
+  console.log('...');
 });
 
 module.exports = app;
