@@ -27,10 +27,16 @@ app.get('/', (req, res) => {
 app.get('/students', (req, res) => {
   try {
     const databasePath = './database.csv';
+
+    if (!fs.existsSync(databasePath)) {
+      res.status(500).type('text').send('Database does not exist');
+      return;
+    }
+
     const data = fs.readFileSync(databasePath, 'utf-8');
 
     if (data.trim() === '') {
-      res.type('text').send('Empty database');
+      res.status(500).type('text').send('Empty database');
       return;
     }
 
@@ -49,14 +55,10 @@ app.get('/students', (req, res) => {
 
     response += `Number of students: ${totalStudents}\n`;
 
-    res.type('text').send(response);
+    res.status(200).type('text').send(response);
   } catch (error) {
-    res.type('text').send('Error reading database');
+    res.status(500).type('text').send('Error reading database');
   }
-});
-
-app.listen(port, () => {
-  console.log('...');
 });
 
 module.exports = app;
