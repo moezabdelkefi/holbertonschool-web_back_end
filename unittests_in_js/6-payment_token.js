@@ -3,7 +3,7 @@ function getPaymentTokenFromAPI(success) {
         if (success) {
             resolve({ data: 'Successful response from the API' });
         } else {
-            resolve();
+            reject(new Error('Failed to get payment token from API'));
         }
     });
 }
